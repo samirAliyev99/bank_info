@@ -1,0 +1,4 @@
+{
+  "_note": "Manually entered exchange rates. Use this when a bank's page can't be scraped. Entries here override the scraper. Example: \"banks\": { \"kapital\": { \"USD\": { \"buy\": 1.695, \"sell\": 1.705 } } }",
+  "banks": {}
+}

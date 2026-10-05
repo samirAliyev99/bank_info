@@ -1,0 +1,281 @@
+{
+  "_note": "INDICATIVE SAMPLE FIGURES. Loan and deposit terms are not published in a machine-readable form, so they are kept here by hand. Check each product on the bank's website and update rateMin/rateMax/rate and lastReviewed. The website shows these with an 'indicative' warning.",
+  "lastReviewed": null,
+  "products": [
+    {
+      "bankId": "kapital",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 16.0,
+      "rateMax": 25.0,
+      "maxAmount": 50000,
+      "maxTermMonths": 59,
+      "url": "https://www.kapitalbank.az"
+    },
+    {
+      "bankId": "kapital",
+      "type": "mortgage",
+      "name": "Mortgage",
+      "currency": "AZN",
+      "rateMin": 8.0,
+      "rateMax": 12.0,
+      "maxAmount": 300000,
+      "maxTermMonths": 300,
+      "url": "https://www.kapitalbank.az"
+    },
+    {
+      "bankId": "kapital",
+      "type": "auto",
+      "name": "Auto loan",
+      "currency": "AZN",
+      "rateMin": 12.0,
+      "rateMax": 18.0,
+      "maxAmount": 100000,
+      "maxTermMonths": 60,
+      "url": "https://www.kapitalbank.az"
+    },
+    {
+      "bankId": "abb",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 15.0,
+      "rateMax": 24.0,
+      "maxAmount": 50000,
+      "maxTermMonths": 59,
+      "url": "https://abb-bank.az"
+    },
+    {
+      "bankId": "abb",
+      "type": "mortgage",
+      "name": "Mortgage",
+      "currency": "AZN",
+      "rateMin": 8.0,
+      "rateMax": 11.5,
+      "maxAmount": 400000,
+      "maxTermMonths": 300,
+      "url": "https://abb-bank.az"
+    },
+    {
+      "bankId": "abb",
+      "type": "business",
+      "name": "SME loan",
+      "currency": "AZN",
+      "rateMin": 11.0,
+      "rateMax": 18.0,
+      "maxAmount": 1000000,
+      "maxTermMonths": 60,
+      "url": "https://abb-bank.az"
+    },
+    {
+      "bankId": "pasha",
+      "type": "business",
+      "name": "Business loan",
+      "currency": "AZN",
+      "rateMin": 10.0,
+      "rateMax": 16.0,
+      "maxAmount": 5000000,
+      "maxTermMonths": 84,
+      "url": "https://www.pashabank.az"
+    },
+    {
+      "bankId": "pasha",
+      "type": "mortgage",
+      "name": "Mortgage",
+      "currency": "AZN",
+      "rateMin": 8.5,
+      "rateMax": 11.0,
+      "maxAmount": 500000,
+      "maxTermMonths": 300,
+      "url": "https://www.pashabank.az"
+    },
+    {
+      "bankId": "respublika",
+      "type": "consumer",
+      "name": "Consumer loan",
+      "currency": "AZN",
+      "rateMin": 16.0,
+      "rateMax": 26.0,
+      "maxAmount": 30000,
+      "maxTermMonths": 48,
+      "url": "https://www.bankrespublika.az"
+    },
+    {
+      "bankId": "respublika",
+      "type": "auto",
+      "name": "Auto loan",
+      "currency": "AZN",
+      "rateMin": 13.0,
+      "rateMax": 19.0,
+      "maxAmount": 80000,
+      "maxTermMonths": 60,
+      "url": "https://www.bankrespublika.az"
+    },
+    {
+      "bankId": "xalq",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 17.0,
+      "rateMax": 26.0,
+      "maxAmount": 30000,
+      "maxTermMonths": 48,
+      "url": "https://www.xalqbank.az"
+    },
+    {
+      "bankId": "unibank",
+      "type": "consumer",
+      "name": "Cash loan (online)",
+      "currency": "AZN",
+      "rateMin": 17.0,
+      "rateMax": 28.0,
+      "maxAmount": 30000,
+      "maxTermMonths": 48,
+      "url": "https://unibank.az"
+    },
+    {
+      "bankId": "unibank",
+      "type": "auto",
+      "name": "Auto loan",
+      "currency": "AZN",
+      "rateMin": 14.0,
+      "rateMax": 20.0,
+      "maxAmount": 70000,
+      "maxTermMonths": 60,
+      "url": "https://unibank.az"
+    },
+    {
+      "bankId": "yelo",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 16.0,
+      "rateMax": 25.0,
+      "maxAmount": 40000,
+      "maxTermMonths": 59,
+      "url": "https://www.yelo.az"
+    },
+    {
+      "bankId": "access",
+      "type": "business",
+      "name": "Micro business loan",
+      "currency": "AZN",
+      "rateMin": 14.0,
+      "rateMax": 24.0,
+      "maxAmount": 200000,
+      "maxTermMonths": 60,
+      "url": "https://www.accessbank.az"
+    },
+    {
+      "bankId": "access",
+      "type": "consumer",
+      "name": "Consumer loan",
+      "currency": "AZN",
+      "rateMin": 18.0,
+      "rateMax": 28.0,
+      "maxAmount": 25000,
+      "maxTermMonths": 48,
+      "url": "https://www.accessbank.az"
+    },
+    {
+      "bankId": "rabita",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 17.0,
+      "rateMax": 27.0,
+      "maxAmount": 30000,
+      "maxTermMonths": 48,
+      "url": "https://www.rabitabank.com"
+    },
+    {
+      "bankId": "express",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 17.0,
+      "rateMax": 26.0,
+      "maxAmount": 30000,
+      "maxTermMonths": 48,
+      "url": "https://www.expressbank.az"
+    },
+    {
+      "bankId": "bankofbaku",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 16.0,
+      "rateMax": 25.0,
+      "maxAmount": 40000,
+      "maxTermMonths": 59,
+      "url": "https://www.bankofbaku.com"
+    },
+    {
+      "bankId": "bankofbaku",
+      "type": "mortgage",
+      "name": "Mortgage",
+      "currency": "AZN",
+      "rateMin": 9.0,
+      "rateMax": 12.0,
+      "maxAmount": 250000,
+      "maxTermMonths": 240,
+      "url": "https://www.bankofbaku.com"
+    },
+    {
+      "bankId": "yapikredi",
+      "type": "consumer",
+      "name": "Consumer loan",
+      "currency": "AZN",
+      "rateMin": 15.0,
+      "rateMax": 22.0,
+      "maxAmount": 50000,
+      "maxTermMonths": 60,
+      "url": "https://www.yapikredi.com.az"
+    },
+    {
+      "bankId": "turan",
+      "type": "business",
+      "name": "SME loan",
+      "currency": "AZN",
+      "rateMin": 12.0,
+      "rateMax": 20.0,
+      "maxAmount": 500000,
+      "maxTermMonths": 60,
+      "url": "https://www.turanbank.az"
+    },
+    {
+      "bankId": "ziraat",
+      "type": "business",
+      "name": "Business loan",
+      "currency": "AZN",
+      "rateMin": 11.0,
+      "rateMax": 18.0,
+      "maxAmount": 1000000,
+      "maxTermMonths": 60,
+      "url": "https://www.ziraatbank.az"
+    },
+    {
+      "bankId": "afb",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 18.0,
+      "rateMax": 28.0,
+      "maxAmount": 20000,
+      "maxTermMonths": 36,
+      "url": "https://www.afb.az"
+    },
+    {
+      "bankId": "premium",
+      "type": "consumer",
+      "name": "Cash loan",
+      "currency": "AZN",
+      "rateMin": 18.0,
+      "rateMax": 29.0,
+      "maxAmount": 20000,
+      "maxTermMonths": 36,
+      "url": "https://www.premiumbank.az"
+    }
+  ]
+}

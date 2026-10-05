@@ -1,0 +1,231 @@
+{
+  "_note": "INDICATIVE SAMPLE FIGURES. Loan and deposit terms are not published in a machine-readable form, so they are kept here by hand. Check each product on the bank's website and update rateMin/rateMax/rate and lastReviewed. The website shows these with an 'indicative' warning.",
+  "lastReviewed": null,
+  "products": [
+    {
+      "bankId": "kapital",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 9.0,
+      "minAmount": 100,
+      "url": "https://www.kapitalbank.az"
+    },
+    {
+      "bankId": "kapital",
+      "name": "Term deposit",
+      "currency": "USD",
+      "termMonths": 12,
+      "rate": 1.5,
+      "minAmount": 100,
+      "url": "https://www.kapitalbank.az"
+    },
+    {
+      "bankId": "pasha",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 8.5,
+      "minAmount": 1000,
+      "url": "https://www.pashabank.az"
+    },
+    {
+      "bankId": "pasha",
+      "name": "Term deposit",
+      "currency": "USD",
+      "termMonths": 12,
+      "rate": 1.5,
+      "minAmount": 1000,
+      "url": "https://www.pashabank.az"
+    },
+    {
+      "bankId": "abb",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 9.0,
+      "minAmount": 100,
+      "url": "https://abb-bank.az"
+    },
+    {
+      "bankId": "abb",
+      "name": "Term deposit",
+      "currency": "USD",
+      "termMonths": 12,
+      "rate": 1.75,
+      "minAmount": 100,
+      "url": "https://abb-bank.az"
+    },
+    {
+      "bankId": "respublika",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 10.0,
+      "minAmount": 100,
+      "url": "https://www.bankrespublika.az"
+    },
+    {
+      "bankId": "respublika",
+      "name": "Term deposit",
+      "currency": "USD",
+      "termMonths": 12,
+      "rate": 2.0,
+      "minAmount": 100,
+      "url": "https://www.bankrespublika.az"
+    },
+    {
+      "bankId": "xalq",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 10.5,
+      "minAmount": 100,
+      "url": "https://www.xalqbank.az"
+    },
+    {
+      "bankId": "unibank",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 10.0,
+      "minAmount": 100,
+      "url": "https://unibank.az"
+    },
+    {
+      "bankId": "unibank",
+      "name": "Term deposit",
+      "currency": "USD",
+      "termMonths": 12,
+      "rate": 2.0,
+      "minAmount": 100,
+      "url": "https://unibank.az"
+    },
+    {
+      "bankId": "yelo",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 10.5,
+      "minAmount": 100,
+      "url": "https://www.yelo.az"
+    },
+    {
+      "bankId": "access",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 10.0,
+      "minAmount": 100,
+      "url": "https://www.accessbank.az"
+    },
+    {
+      "bankId": "rabita",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 10.5,
+      "minAmount": 100,
+      "url": "https://www.rabitabank.com"
+    },
+    {
+      "bankId": "rabita",
+      "name": "Term deposit",
+      "currency": "USD",
+      "termMonths": 12,
+      "rate": 2.0,
+      "minAmount": 100,
+      "url": "https://www.rabitabank.com"
+    },
+    {
+      "bankId": "express",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 11.0,
+      "minAmount": 500,
+      "url": "https://www.expressbank.az"
+    },
+    {
+      "bankId": "bankofbaku",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 10.0,
+      "minAmount": 100,
+      "url": "https://www.bankofbaku.com"
+    },
+    {
+      "bankId": "turan",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 11.0,
+      "minAmount": 500,
+      "url": "https://www.turanbank.az"
+    },
+    {
+      "bankId": "turan",
+      "name": "Term deposit",
+      "currency": "USD",
+      "termMonths": 12,
+      "rate": 2.5,
+      "minAmount": 500,
+      "url": "https://www.turanbank.az"
+    },
+    {
+      "bankId": "afb",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 11.5,
+      "minAmount": 500,
+      "url": "https://www.afb.az"
+    },
+    {
+      "bankId": "premium",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 12,
+      "rate": 12.0,
+      "minAmount": 500,
+      "url": "https://www.premiumbank.az"
+    },
+    {
+      "bankId": "kapital",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 24,
+      "rate": 9.5,
+      "minAmount": 100,
+      "url": "https://www.kapitalbank.az"
+    },
+    {
+      "bankId": "abb",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 24,
+      "rate": 9.5,
+      "minAmount": 100,
+      "url": "https://abb-bank.az"
+    },
+    {
+      "bankId": "respublika",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 24,
+      "rate": 10.5,
+      "minAmount": 100,
+      "url": "https://www.bankrespublika.az"
+    },
+    {
+      "bankId": "premium",
+      "name": "Term deposit",
+      "currency": "AZN",
+      "termMonths": 24,
+      "rate": 12.5,
+      "minAmount": 500,
+      "url": "https://www.premiumbank.az"
+    }
+  ]
+}

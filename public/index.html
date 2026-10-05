@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bank Info AZ</title>
+  <meta name="description" content="Exchange rates, loans and deposits from every bank in Azerbaijan, side by side.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b6e4f'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'>₼</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">₼</span>
+        <div>
+          <h1>Bank Info AZ</h1>
+          <p class="tagline">Every bank in Azerbaijan, one page</p>
+        </div>
+      </div>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="currency" aria-selected="true">Currency</button>
+        <button role="tab" data-tab="loans" aria-selected="false">Loans</button>
+        <button role="tab" data-tab="deposits" aria-selected="false">Deposits</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="demo-banner" class="banner warn" hidden>
+      Demo mode: bank rates below are generated sample numbers, not real quotes.
+    </div>
+
+    <!-- Currency -->
+    <section id="tab-currency" class="tab-panel">
+      <div class="official card">
+        <div class="official-head">
+          <h2>Official CBAR rates</h2>
+          <span id="official-date" class="muted"></span>
+        </div>
+        <div id="official-list" class="official-list"></div>
+      </div>
+
+      <div class="card converter">
+        <h2>Converter</h2>
+        <div class="conv-row">
+          <label>Amount <input id="conv-amount" type="number" min="0" step="any" value="100"></label>
+          <label>I have
+            <select id="conv-from"></select>
+          </label>
+          <button id="conv-swap" class="icon-btn" title="Swap" aria-label="Swap currencies">⇄</button>
+          <label>I want
+            <select id="conv-to"></select>
+          </label>
+        </div>
+        <ol id="conv-results" class="conv-results"></ol>
+      </div>
+
+      <div class="card">
+        <div class="table-head">
+          <h2>Bank exchange rates</h2>
+          <div class="controls">
+            <label>Currency
+              <select id="rate-currency"></select>
+            </label>
+            <label>Sort
+              <select id="rate-sort">
+                <option value="sell">Cheapest to buy</option>
+                <option value="buy">Best to sell</option>
+                <option value="spread">Smallest spread</option>
+                <option value="name">Bank name</option>
+              </select>
+            </label>
+            <button id="refresh" class="btn">Refresh</button>
+          </div>
+        </div>
+        <p class="hint">
+          <b>Bank buys</b> = what you get when you sell currency to the bank.
+          <b>Bank sells</b> = what you pay to buy currency. Best values are highlighted.
+        </p>
+        <div class="table-scroll">
+          <table class="rates">
+            <thead>
+              <tr><th>Bank</th><th class="num">Bank buys</th><th class="num">Bank sells</th><th class="num">Spread</th><th>Status</th></tr>
+            </thead>
+            <tbody id="rates-body"></tbody>
+          </table>
+        </div>
+        <p id="updated" class="muted small"></p>
+      </div>
+
+      <div class="card">
+        <h2>All currencies at a glance</h2>
+        <div class="table-scroll">
+          <table class="matrix" id="matrix"></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loans -->
+    <section id="tab-loans" class="tab-panel" hidden>
+      <div class="banner info">
+        Loan rates are indicative and kept by hand. Always confirm the current terms on the bank's website.
+      </div>
+      <div class="card calc">
+        <h2>Loan calculator</h2>
+        <div class="conv-row">
+          <label>Amount, ₼ <input id="loan-amount" type="number" min="100" step="100" value="10000"></label>
+          <label>Term, months <input id="loan-term" type="number" min="1" max="360" value="36"></label>
+          <label>Type
+            <select id="loan-type">
+              <option value="all">All types</option>
+              <option value="consumer">Consumer / cash</option>
+              <option value="mortgage">Mortgage</option>
+              <option value="auto">Auto</option>
+              <option value="business">Business</option>
+            </select>
+          </label>
+        </div>
+        <p class="hint">Monthly payment uses the lowest advertised rate (annuity). Products that don't allow your amount or term are dimmed.</p>
+      </div>
+      <div class="card">
+        <div class="table-scroll">
+          <table class="rates">
+            <thead>
+              <tr><th>Bank</th><th>Product</th><th class="num">Rate, %/yr</th><th class="num">Max amount</th><th class="num">Max term</th><th class="num">Monthly</th><th class="num">Total interest</th></tr>
+            </thead>
+            <tbody id="loans-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deposits -->
+    <section id="tab-deposits" class="tab-panel" hidden>
+      <div class="banner info">
+        Deposit rates are indicative and kept by hand. Always confirm the current terms on the bank's website.
+      </div>
+      <div class="card calc">
+        <h2>Deposit calculator</h2>
+        <div class="conv-row">
+          <label>Amount <input id="dep-amount" type="number" min="0" step="100" value="5000"></label>
+          <label>Currency
+            <select id="dep-currency"><option>AZN</option><option>USD</option></select>
+          </label>
+          <label>Term
+            <select id="dep-term"><option value="12">12 months</option><option value="24">24 months</option></select>
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="table-scroll">
+          <table class="rates">
+            <thead>
+              <tr><th>Bank</th><th>Product</th><th class="num">Rate, %/yr</th><th class="num">Min amount</th><th class="num">Interest earned</th></tr>
+            </thead>
+            <tbody id="deposits-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap muted small">
+    Official rates: Central Bank of Azerbaijan (cbar.az). Bank rates are read from each bank's own website and may lag behind.
+    This site is informational only.
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
