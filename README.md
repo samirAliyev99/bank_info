@@ -8,6 +8,8 @@ One website that puts all Azerbaijani banks side by side:
 
 No dependencies. You only need Node.js 18 or newer.
 
+This repository also contains **[Lotereya](lotereya/README.md)**, a separate app for rotating family savings (rooms, ratings, SİMA sign-up).
+
 ## Run it
 
 ```bash

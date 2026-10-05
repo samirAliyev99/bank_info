@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SİMA Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="banner">Bu, SİMA tətbiqinin simulyasiyasıdır. Real SİMA deyil.</div>
+  <main>
+    <div class="phone" id="phone"><p class="muted">Yüklənir…</p></div>
+  </main>
+  <script type="module">
+    const phone = document.getElementById('phone');
+    const id = new URLSearchParams(location.search).get('req');
+    const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+
+    async function send(body) {
+      const res = await fetch(`api/sima/mock/${encodeURIComponent(id)}/sign`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+    }
+
+    const res = await fetch(`api/sima/mock/${encodeURIComponent(id)}`);
+    const req = await res.json();
+    if (!res.ok || req.status !== 'pending') {
+      phone.innerHTML = `<h2>SİMA</h2><p>${esc(req.error || 'Sorğu artıq aktiv deyil.')}</p>`;
+    } else {
+      phone.innerHTML = `
+        <h2>SİMA · İmza sorğusu</h2>
+        <p><b>${esc(req.purpose)}</b></p>
+        <p class="muted small">Sənəd kodu: ${esc(req.challenge.slice(0, 12))}…</p>
+        <form id="f">
+          <label>FİN kod</label><input name="fin" maxlength="7" placeholder="Məs: 5ABC12D" required style="text-transform:uppercase">
+          <label>Ad Soyad (sertifikatdan)</label><input name="fullName" placeholder="Samir Əliyev" required>
+          <p class="row"><button>İmzala</button><button type="button" class="ghost" id="reject">Rədd et</button></p>
+          <p class="small" id="err" style="color:var(--danger)"></p>
+        </form>`;
+      const f = document.getElementById('f');
+      const done = (text) => { phone.innerHTML = `<h2>SİMA</h2><p>${text}</p><p class="muted small">Bu pəncərəni bağlaya bilərsiniz.</p>`; };
+      f.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+          await send({ fin: f.fin.value, fullName: f.fullName.value, approve: true });
+          done('✅ İmzalandı.');
+        } catch (err) { document.getElementById('err').textContent = err.message; }
+      });
+      document.getElementById('reject').addEventListener('click', async () => {
+        await send({ approve: false }).catch(() => {});
+        done('Sorğu rədd edildi.');
+      });
+    }
+  </script>
+</body>
+</html>
