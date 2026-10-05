@@ -60,7 +60,8 @@ async function serveStatic(req, res) {
 }
 
 const server = http.createServer(async (req, res) => {
-  const { pathname } = new URL(req.url, 'http://x');
+  // The page requests api/*.json so the same files work on GitHub Pages.
+  const pathname = new URL(req.url, 'http://x').pathname.replace(/^(\/api\/\w+)\.json$/, '$1');
   try {
     if (pathname === '/api/rates' && req.method === 'GET') {
       const snapshot = aggregator.snapshot || (await aggregator.refresh());

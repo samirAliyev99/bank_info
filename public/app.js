@@ -29,7 +29,12 @@ async function loadRates(force = false) {
   const btn = $('#refresh');
   btn.disabled = true;
   try {
-    const res = await fetch(force ? '/api/refresh' : '/api/rates', { method: force ? 'POST' : 'GET' });
+    // On GitHub Pages (static build) rates are re-collected on a schedule, so
+    // "Refresh" just reloads the latest published file.
+    const live = force && !state.rates?.static;
+    const res = live
+      ? await fetch('api/refresh', { method: 'POST' })
+      : await fetch(`api/rates.json${force ? `?t=${Date.now()}` : ''}`, { cache: force ? 'no-store' : 'default' });
     if (res.status === 429) {
       $('#updated').textContent = 'Rates were refreshed less than a minute ago — try again shortly.';
       return;
@@ -75,7 +80,7 @@ function renderRates() {
   renderMatrix();
   renderConverter();
   const live = data.banks.filter((b) => b.status !== 'error').length;
-  $('#updated').textContent = `Updated ${new Date(data.updatedAt).toLocaleString()} · ${live} of ${data.banks.length} banks reporting`;
+  $('#updated').textContent = `Updated ${new Date(data.updatedAt).toLocaleString()} · ${live} of ${data.banks.length} banks reporting${data.static ? ' · re-collected every 30 minutes' : ''}`;
 }
 
 function renderBankTable() {
@@ -161,7 +166,7 @@ $('#conv-swap').addEventListener('click', () => {
 
 /* ---------- loans ---------- */
 async function loadLoans() {
-  state.loans = await (await fetch('/api/loans')).json();
+  state.loans = await (await fetch('api/loans.json')).json();
   renderLoans();
 }
 
@@ -199,7 +204,7 @@ function renderLoans() {
 
 /* ---------- deposits ---------- */
 async function loadDeposits() {
-  state.deposits = await (await fetch('/api/deposits')).json();
+  state.deposits = await (await fetch('api/deposits.json')).json();
   renderDeposits();
 }
 

@@ -24,6 +24,18 @@ Environment variables:
 | `REFRESH_MINUTES` | `15`    | How often rates are re-fetched           |
 | `DEMO`            | unset   | `1` = generated sample bank rates        |
 
+## Live on GitHub Pages
+
+The site is published to **https://samiraliyev99.github.io/bank_info/** by `.github/workflows/pages.yml`. GitHub Pages can't run a server, so the workflow runs every 30 minutes (and on every push) and does this:
+
+1. runs the tests,
+2. runs `node scripts/build.js`, which fetches all rates once and writes the website plus `api/*.json` into `dist/`,
+3. publishes `dist/` to GitHub Pages.
+
+One-time setup: in the repository go to **Settings → Pages**, and under **Build and deployment → Source** choose **GitHub Actions**. To refresh immediately, open **Actions → Publish site → Run workflow**.
+
+GitHub may pause scheduled workflows after 60 days with no commits in the repository. If that happens, re-enable the workflow on the Actions tab.
+
 ## Where the data comes from
 
 | Data | Source | How it updates |
@@ -58,6 +70,8 @@ Environment variables:
 ## Layout
 
 ```
+scripts/build.js           Static build for GitHub Pages
+.github/workflows/         Scheduled publish to GitHub Pages
 server.js                  HTTP server, API, static files, refresh timer
 src/config/banks.js        Banks and currencies
 src/sources/cbar.js        Central Bank XML fetch and parse
